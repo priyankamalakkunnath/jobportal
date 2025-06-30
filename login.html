@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+/* Simple fade-in animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-card {
+  animation: fadeInUp 0.8s ease-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+</style>
+    {% include 'header.html' %} 
+    <section class="about_section layout_padding">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card animated-card p-4 mt-5">
+          <h2 class="text-center mb-4">Login</h2>
+          <form method="POST">
+            {% csrf_token %}
+            <div class="mb-4">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required>
+            </div>
+            <div class="mb-4">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter your password" name="psw" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <p class="text-center mt-3">
+              Create an account? <a href="{% url 'Register' %}">Register</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
+{% endblock %}

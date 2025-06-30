@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+    <script>
+    function toggleReplyBox(button) {
+        const replyBox = button.nextElementSibling;
+        if (replyBox.style.display === "none" || replyBox.style.display === "") {
+            replyBox.style.display = "block";
+        } else {
+            replyBox.style.display = "none";
+        }
+    }
+</script>
+    <style>
+         .full-bg {
+      background-image: url("/static/img/pro.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      position: relative;
+      color: white;
+         }
+          .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .card {
+            width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 24px rgba(0,0,0,0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-top: 10px;
+        }
+         .card-container {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .category-card {
+            width: 320px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 25px;
+            font-family: Arial, sans-serif;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-card h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .category-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }</style>
+ {% include 'header.html' %}
+    <section class="full-bg">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 style="padding-top: 200px;text-align: center;font-size: 50px;">Service Single</h1><br>
+      <p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate est, consequuntur perferendis.</p><br><br><br></div></section> 
+      <h3 style="padding-top: 100px;padding-left: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
+      <p style="font-size: 20px;padding-left: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Assumenda nihil aspernatur nemo sunt, qui, harum repudiandae quisquam <br>eaque dolore itaque quod tenetur quo quos labore?</p> 
+      <img src="/static/img/team.jpg" alt="Logo" style="width: 600px;margin-left: 100px;">
+      <p style="font-size: 20px;padding-left: 50px;padding-top: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae expedita cumque necessitatibus<br> ducimus debitis totam, quasi praesentium eveniet tempore possimus illo esse, facilis? Corrupti<br> possimus quae ipsa pariatur cumque, accusantium tenetur voluptatibus incidunt reprehenderit,<br> quidem repellat sapiente, id, earum obcaecati.</p>
+      <p style="font-size: 20px;padding-left: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae expedita cumque necessitatibus<br> ducimus debitis totam, quasi praesentium eveniet tempore possimus illo esse, facilis? Corrupti<br> possimus quae ipsa pariatur cumque, accusantium tenetur voluptatibus incidunt reprehenderit,<br> quidem repellat sapiente, id, earum obcaecati.</p>
+<div class="card-container">
+    <div class="card" style="width: 400px;height: 300px;margin-left: 800px;margin-top: -1400px;">
+        <img src="/static/img/women2.jpg" alt="Card Image" style="width: 100px;height: 100px;margin-right: 100px;border-radius: 50%;margin-top: 50px;margin-left: 100px;">
+            <p style="text-align: center;">This is a description of the card. It looks great with animation!</p>
+            <a href="{% url 'home' %}" class="btn btn-primary btn-sm"    style="margin-top: 10px;margin-left: 150px;width: 100px;">Read more</a>
+        </div>
+    </div>
+</div>
+<div class="card-container" style="margin-left: 800px;margin-top: -600px;">
+    <div class="category-card">
+        <h3>Categories</h3>
+        <ul class="category-list">
+            <li>Creatives <span>(12)</span></li>
+            <li>News <span>(22)</span></li>
+            <li>Design <span>(37)</span></li>
+            <li>HTML <span>(42)</span></li>
+            <li>Web Development <span>(18)</span></li>
+        </ul>
+    </div>
+</div>
+
+    
+   <h3 style="text-align: start;padding-top: 150px;padding-left: 150px;">{{ total_comments }} Comments</h3>
+
+{% for comment in comments %}
+<div class="comment-box" style="display: flex; margin: 20px;">
+    <img src="/static/img/women2.jpg" alt="User" style="width: 100px; height: 100px; border-radius: 50%; margin-left: 100px;">
+    
+    <div class="comment-content" style="margin-left: 20px;">
+        <strong>{{ comment.name }}</strong>
+        <span style="color: gray;">{{ comment.created_at }}</span>
+        <p>{{ comment.message }}</p>
+
+        <button onclick="toggleReplyBox(this)" class="btn btn-primary btn-sm mt-2">Reply</button>
+
+        <!-- Hidden Reply Box -->
+        <div class="reply-box mt-2" style="display: none;">
+            <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                <input type="text" name="reply_text" class="form-control" placeholder="Write a reply..." required>
+                <button type="submit" class="btn btn-success btn-sm mt-1" name="submit_reply">Send</button>
+            </form>
+        </div>
+
+        <!-- Replies -->
+        {% for reply in comment.replies.all %}
+            <div style="margin-left: 40px; margin-top: 10px; padding-left: 20px; border-left: 2px solid #ccc;">
+                <strong>Reply:</strong> {{ reply.reply_text }}
+                <div style="color: gray;">{{ reply.created_at }}</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+
+<h2 style="text-align:center;padding-top: 60px;">Leave a Comment</h2>
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+<form method="POST" action="" style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; max-width: 500px; background-color: #f9f9f9;margin-left: 500px;">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Your Name *" required style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+    <input type="email" name="email" placeholder="Your Email *" required style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+    <input type="url" name="website" placeholder="Your Website" style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+    <textarea name="message" rows="4" placeholder="Your Comment *" required style="width: 100%; padding: 8px; margin-bottom: 10px;"></textarea><br>
+    <button type="submit" name="submit_comment" class="btn btn-primary">Post Comment</button>
+</form><br><br>
+
+
+{% include 'footer.html' %}
+</body>
+
+</html>
+{% endblock %}

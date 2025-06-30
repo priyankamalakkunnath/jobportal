@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+</head>
+<body>
+    <h2>Upload New Image</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Enter Title" required><br><br>
+        <input type="file" name="image" required><br><br>
+        <button type="submit">Upload</button>
+    </form>
+    <br>
+    <a href="{% url 'show_images' %}">View All Images</a>
+</body>
+</html>

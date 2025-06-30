@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+         .full-bg {
+      background-image: url("/static/img/pro.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      position: relative;
+      color: white;
+         }
+.custom-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 20px;
+  border: none;
+  background-color: wheat;
+  
+}
+.custom-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.custom-icon {
+  font-size: 45px;
+  color: #007bff;
+}
+.card-link {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+.card-link:hover {
+  text-decoration: underline;
+}
+         </style>
+     {% include 'header.html' %}
+    <section class="full-bg">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 style="padding-top: 200px;text-align: center;font-size: 50px;">Service Single</h1><br>
+      <p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate est, consequuntur perferendis.</p><br><br><br></div>
+      <div class="container py-5">
+  <div class="row justify-content">
+    <div class="col-md-6 col-lg-4">
+      <div class="card100 text-center p-4 animate__animated animate__zoomIn custom-card" style="margin-top: 200px;">
+        <div class="card-body">
+          <a href="{% url 'single' %}" class="card-link">Graphic design</a>
+          <a href="{% url 'single' %}" class="card-link">Marketing stratergy</a>
+         <a href="{% url 'single' %}" class="card-link">web design</a>
+         <a href="{% url 'single' %}" class="card-link">Market leading</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<img src="/static/img/graphic-designer.png" alt="Logo" width="100" style="margin-left: 800px;margin-top: -250px;">
+<h3 style="color: black;padding-left: 700px;">Graphic Design</h3>
+<p style="color: black;font-size: 20px;padding-left: 700px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Ipsam dolorum incidunt dolorem facere, officiis placeat consequuntur odit quasi, quam voluptates, deleniti!<br> Neque tenetur in, omnis consectetur molestias expedita nostrum et.
+
+Sed odio temporibus quaerat laboriosam dicta ipsam eligendi deserunt architecto,<br> aliquam in totam provident praesentium aperiam, <br>id impedit aut delectus mollitia doloribus nostrum numquam tempore ullam reprehenderit nesciunt cumque veniam.
+
+Officia mollitia deserunt vel expedita deleniti iure eius illum dolor optio tempora!<br> Fuga, voluptates omnis velit neque. Rerum aperiam consequatur vero, nulla dolores a. Sed, non veniam maiores recusandae iure.
+
+Nobis officia tempore porro incidunt quaerat commodi numquam exercitationem laboriosam deserunt,<br> error excepturi et delectus quis explicabo repellendus obcaecati iusto. Delectus magni ducimus illo! Fugit quaerat debitis deserunt facere reiciendis!</p>
+<a href="{% url 'singleservice' %}" class="btn btn-primary btn-lg" style="margin-left: 600px;margin-top: 50px;">Hire Us,Our Agency</a><br><br>
+ {% include 'footer.html' %}
+</body>
+</html>
+{% endblock %}

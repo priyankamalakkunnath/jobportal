@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Upload Image</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Title:</label><br>
+    <input type="text" name="title" required><br><br>
+
+    <label>Category:</label><br>
+    <select name="category" required>
+        <option value="web">Web</option>
+        <option value="design">Design</option>
+        <option value="graphic">Graphic</option>
+    </select><br><br>
+
+    <label>Image:</label><br>
+    <input type="file" name="image" required><br><br>
+
+    <button type="submit">Upload</button>
+</form>
+</body>
+</html>

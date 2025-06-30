@@ -1,0 +1,137 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     {% include 'header.html' %}
+     <style>
+         .full-bg {
+      background-image: url("/static/img/pro.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      position: relative;
+      color: white;
+    }
+    </style>
+     <section class="full-bg">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 style="padding-top: 200px;text-align: center;font-size: 60px;">Post A Job</h1><br>
+      <p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate est, consequuntur perferendis.</p><br><br><br>
+      <div class="d-flex gap-2">
+  <h3 style="padding-left: 300px;">Post a job</h3>
+  <button class="btn btn-success" style="margin-left: 300px;">Preview</button>
+  <button class="btn btn-danger" style="margin-left: 300px;">Save job</button>
+</div>
+      </div>
+      <div class="container mt-5">
+        
+    <div class="border p-4 rounded shadow" style="background-color: #f9f9f9; margin-top: 100px;margin-left: 50px;">
+    <h2 class="mb-4" style="color: black;padding-top: 50px;font-size: 40px;">Post a Job</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h4 style="color: black;">Job Details</h4>
+        <div class="form-group">
+            <label style="color: black;">Email</label><br><br>
+            <input type="email" name="email" class="form-control" placeholder="you@yourdomain.com" required><br>
+        </div>
+
+        <div class="form-group">
+            <label style="color: black;">Job Title</label>
+            <input type="text" name="job_title" class="form-control" placeholder="Product Designer" required><br>
+        </div>
+
+        <div class="form-group">
+            <label style="color: black;">Location</label>
+            <input type="text" name="location" class="form-control" placeholder="e.g. New York" required><br>
+        </div>
+
+        <div class="form-group">
+            <label style="color: black;">Job Region</label>
+            <input type="text" name="region" class="form-control" placeholder="e.g. California" required><br>
+        </div>
+
+        <div class="form-group">
+            <label style="color: black;">Job Type</label>
+            <select name="job_type" class="form-control" required><br>
+                <option disabled selected>Select Job Type</option>
+                <option>Full-time</option>
+                <option>Part-time</option>
+                <option>Contract</option>
+                <option>Internship</option>
+                <option>Remote</option>
+            </select>
+        </div><br>
+
+        <div class="form-group">
+            <label style="color: black;">Job Description</label>
+            <textarea name="job_description" class="form-control" rows="4" placeholder="Write job description!" required></textarea><br>
+        </div>
+
+        <div class="form-group">
+            <label style="color: black;">Upload Featured Image</label>
+            <input type="file" name="featured_image" class="form-control-file" required>
+        </div>
+
+        <hr>
+        <h4>Company Details</h4>
+
+        <div class="form-group">
+            <label style="color: black;">Company Name</label>
+            <input type="text" name="company_name" class="form-control" placeholder="Company Name" required><br><br>
+        </div><br>
+
+        <div class="form-group">
+            <label style="color: black;">Tagline (Optional)</label>
+            <input type="text" name="tagline" class="form-control" placeholder="We build great stuff">
+        </div><br>
+
+        <div class="form-group">
+            <label style="color: black;">Company Description</label>
+            <textarea name="company_description" class="form-control" rows="3" placeholder="About the company"></textarea>
+        </div><br>
+
+        <div class="form-group">
+            <label style="color: black;">Website (Optional)</label>
+            <input type="url" name="website" class="form-control" placeholder="https://">
+        </div><br>
+
+        <div class="form-group">
+            <label style="color: black;">Facebook Username (Optional)</label>
+            <input type="text" name="facebook_username" class="form-control" placeholder="companyname">
+        </div><br>
+
+        <div class="form-group">
+            <label style="color: black;">Twitter Username (Optional)</label>
+            <input type="text" name="twitter_username" class="form-control" placeholder="@companyname">
+        </div><br>
+
+        <div class="form-group">
+            <label style="color: black;">LinkedIn Username (Optional)</label>
+            <input type="text" name="linkedin_username" class="form-control" placeholder="companyname">
+        </div><br><br>
+
+        <div class="form-group">
+            <label style="color: black;">Upload Company Logo</label>
+            <input type="file" name="company_logo" class="form-control-file" required>
+        </div><br><br>
+
+        <button type="submit" class="btn btn-primary" style="margin-bottom: 50px;">Submit Job</button><br>
+    </form>
+    </div>
+</div><br><br>
+   {% include 'footer.html' %} 
+</body>
+</html>
+{% endblock %}
