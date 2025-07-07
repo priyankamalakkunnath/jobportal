@@ -1,0 +1,19 @@
+def home(request):
+    events = Event.objects.all()
+    current_user = request.session.get('email', None)
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        company = request.POST.get('company')
+        joblocation = request.POST.get('location')
+        jobexperiance = request.POST.get('experiance')
+
+        mentor.objects.create(
+            title=title,
+            company=company,
+            joblocation=joblocation,
+            jobexperiance=jobexperiance
+        )
+         
+
+    return render(request, 'home.html', {'events': events,
+                  'current_user': current_user})

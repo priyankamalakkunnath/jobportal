@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.p~
+
+
+# Env
+.env
+*.env
+venv/
+env/
+ENV/
+.venv/
+.idea/
+.vscode/
+
+# Django
+db.sqlite3
+/media/
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VSCode
+.vscode/
+
+# PyCharm
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Migrations
+**/migrations/*.pyc
+**/migrations/*.pyo
+**/migrations/*.pyd
+**/migrations/__pycache__/
+**/migrations/*.py
+!*/migrations/__init__.py
+
+# Git
+*.orig

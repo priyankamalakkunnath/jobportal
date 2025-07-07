@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Uploaded CVs</h2>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>CV</th>
+        <th>Actions</th>
+    </tr>
+      {% for cv in cvs %}
+    <tr>
+        <td>{{ cv.name }}</td>
+        <td><a href="{{ cv.cv_file.url }}" target="_blank">Download</a></td>
+        <td>
+            <a href="{% url 'delete_cv' cv.id %}" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

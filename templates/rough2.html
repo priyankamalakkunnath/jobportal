@@ -1,0 +1,346 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <style>
+         .full-bg {
+      background-image: url("/static/img/pro.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 700px;
+      position: relative;
+      color: white;
+    }
+    .event-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 1000px;
+      margin-left: 300px;
+      margin-top: 100px;
+    }
+
+    .event-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .event-left {
+      flex: 1;
+    }
+
+    .event-left h4 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .event-left img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .event-right {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 20px;
+    }
+
+    .event-right p {
+      margin: 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .event-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .btn-small {
+      padding: 6px 14px;
+      font-size: 12px;
+      border-radius: 20px;
+      background-color: #eee;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-right: 200px;
+      margin-top: 30px;
+    }
+
+    .btn-small:hover {
+      background-color: #ddd;
+    }
+
+    .btn-delete {
+      padding: 6px 14px;
+      font-size: 12px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-delete:hover {
+      background-color: #e60000;
+    }
+    .job-card {
+      animation: fadeInUp 1s ease-out;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      transition: transform 0.3s;
+      width: 400px;
+      margin-left: 900px;
+      margin-top: -400px;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .job-card .card-body {
+      padding: 2rem;
+    }
+
+    .job-info {
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .job-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .animated-card {
+      animation: fadeInUp 1s ease-in-out;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      width: 400px;
+      height: 100px;
+      
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn-save {
+      background-color: #f0f0f0;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-save:hover {
+      background-color: #dcdcdc;
+    }
+
+    .btn-apply {
+      background-color: #0d6efd;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-apply:hover {
+      background-color: #084cc3;
+    }
+
+    .event-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .col {
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 15px;
+        overflow: hidden;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color:whitesmoke;
+    }
+
+    .col:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+    {% include 'header.html' %}
+  <section class="full-bg">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 style="padding-top: 200px;text-align: center;font-size: 50px;">Product Designer</h1><br>
+      <p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate est, consequuntur perferendis.</p>
+      </div>
+    <div class="event-card">
+    <div class="event-left">
+      <h4>Product designer</h4>
+      <img src="/static/img/7.jpg" alt="Event Image">
+    </div>
+
+    <div class="event-right">
+      <p style="font-size: 20px;padding-left: 20px;padding-top: 20px;"><i class="bi bi-building"></i> Puma</p>
+      <p style="font-size: 20px;padding-left: 20px;padding-top: 20px;"><i class="bi bi-geo-alt"></i> New york city</p>
+      <p style="font-size: 20px;padding-left: 45px;padding-top: 20px;"><i class="bi bi-clock">Full time</i></p>
+      
+  
+   <button type="submit" class="btn btn-primary btn-lg">Apply Now</button>
+
+      
+    </div>
+
+    <div class="event-buttons">
+     
+   
+   
+      
+    </div>
+  </div>
+<img src="/static/img/team.jpg" alt="Event Image"  style="width: 600px;height: 400px;margin-top: 200px;margin-left: 100px;">
+ <div class="card job-card">
+      <div class="card-body">
+        <h5 class="job-title mb-4">Job Summary</h5>
+        <p class="job-info"><strong>Published on:</strong> April 14, 2019</p>
+        <p class="job-info"><strong>Vacancy:</strong> 20</p>
+        <p class="job-info"><strong>Employment Status:</strong> Full-time</p>
+        <p class="job-info"><strong>Experience:</strong> 2 to 3 year(s)</p>
+        <p class="job-info"><strong>Job Location:</strong> New York City</p>
+        <p class="job-info"><strong>Salary:</strong> $60k - $100k</p>
+        <p class="job-info"><strong>Gender:</strong> Any</p>
+        <p class="job-info"><strong>Application Deadline:</strong> April 28, 2019</p>
+      </div>
+    </div>
+    <h1 style="padding-top: 100px;color:black;padding-left: 50px;font-size: 30px;"><i class="bi bi-card-text me-2" ></i>Job Description</h1>
+    <p style="color: black;padding-left: 50px;font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum fuga eveniet.<br>
+       Deleniti asperiores, commodi quae ipsum quas est itaque, ipsa, dolore beatae voluptates nemo<br>
+        blanditiis iste eius officia minus.
+
+Velit unde aliquam et voluptas reiciendis non sapiente labore,<br> deleniti asperiores blanditiis nihil quia officiis dolor vero iste <br>dolore vel molestiae saepe. Id nisi, consequuntur sunt impedit quidem, vitae mollitia!
+
+</p>
+ <h4 style="padding-top: 50px;color:black;padding-left: 50px;font-size: 30px;"><i class="bi bi-clipboard-check me-2"></i>Responsibilities</h4> 
+ <ul style="color: black;padding-left: 50px;font-size: 20px;">
+  <li>Necessitatibus quibusdam facilis</li>
+  <li>Velit unde aliquam et voluptas reiciendis n Velit unde aliquam et voluptas reiciendis non sapiente labore</li>
+  <li>Necessitatibus quibusdam facilis</li>
+  <li>Necessitatibus quibusdam facilis</li>
+  <li>Necessitatibus quibusdam facilis</li>
+ </ul>  
+ <h4 style="padding-top: 50px;color:black;padding-left: 30px;font-size: 30px;"><i class="bi bi-mortarboard me-2"></i>Education + Experience</h4>
+ <ul style="color: black;padding-left: 50px;font-size: 20px;">
+  <li>Necessitatibus quibusdam facilis</li>
+  <li>Necessitatibus quibusdam facilis</li>
+  <li>Necessitatibus quibusdam facilis</li>
+  <li>Necessitatibus quibusdam facilis</li>
+ </ul>
+ <h4 style="padding-top: 50px;color:black;padding-left: 30px;font-size: 30px;"><i class="bi bi-gift me-2"></i>Other Benifits</h4>
+ <ul style="color: black;padding-left: 50px;font-size: 20px;">
+  <li>Necessitatibus quibusdam facilis</li>
+  <li>Necessitatibus quibusdam facilis</li>
+  <li>Necessitatibus quibusdam facilis</li>
+  <li>Necessitatibus quibusdam facilis</li>
+ </ul>
+<div class="d-flex ">
+        <button class="btn-save" style="margin-left: 200px;width: 200px;">Save Job</button>
+        
+      </div>
+    
+      
+     <div class="container mt-5">
+       
+        <div class="text-center mb-4">
+            <a href="{% url 'create' %}" class="btn btn-primary">Create New Event</a>
+        </div>
+
+        <div class="row row-cols-1 g-4">
+            {% for event in events %}
+            <div class="col">
+                <div class="card-body">
+                    <div class="d-flex flex-column flex-md-row align-items-start justify-content-between gap-5">
+
+                        <a href="{% url 'home'  %}" style="text-decoration: none; color: black;">
+                        <div style="flex: 1;">
+                            <h4 class="card-text me-3 mb-1" style="padding-left: 70px;color:black;font-size: 40px;">{{ event.title }}</h4>
+                            <img src="{{ event.image1.url }}" alt="Image 1" class="img-fluid rounded w-50" style="margin-left: 20px;width: 50px;height: 80px;">
+                        </div>
+                        </a>
+                      
+                        <div class="d-flex flex-wrap align-items-center" style="flex: 2;">
+                            <p class="card-text me-3 mb-1" style="padding-right: 60px; padding-top: 60px;color: black;">{{ event.subtitle }}</p>
+                            <p class="card-text me-3 mb-1" style="padding-right: 20px; padding-top: 60px;color: black;"><i class="bi bi-geo-alt"></i>{{ event.location }}</p>
+                            <p class="card-text me-3 mb-1" style="padding-left: 80px; padding-top: 60px;color: black;">${{ event.payment }}</p>
+                            <p class="card-text mb-1" style="padding-top: 60px;color: black;padding-left: 100px;"><i class="bi bi-clock"></i>{{ event.time }}</p>
+                            <button type="button" class="btn btn-light btn-lg" style="margin-left: 800px; margin-top: -50px; border-radius: 30%; font-size: 10px;">Full time</button>
+                            <form action="{% url 'deletelist' event.id %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-light btn-sm">Delete1</button>
+                            </form>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+ 
+   
+</body>
+{% include 'footer.html' %}
+</html>
+{% endblock %}
